@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-    sequelize.define('Share', {
+module.exports = async (sequelize) => {
+    await sequelize.define('Share', {
         symbol: {
             // PRIMARY KEY, ALL CAPITAL, 3 LETTERS
             type: DataTypes.STRING(3),

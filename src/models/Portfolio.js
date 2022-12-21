@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-    sequelize.define('Portfolio', {
+module.exports = async (sequelize) => {
+    await sequelize.define('Portfolio', {
+        // a client cannot own fewer than one share
         amount: {
             type: DataTypes.INTEGER,
             allowNull: false,

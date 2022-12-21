@@ -4,22 +4,26 @@ require('./share')(sequelize);
 require('./client')(sequelize);
 require('./portfolio')(sequelize);
 
-sequelize.sync();
+const associate = async () => {
+    await sequelize.sync();
 
-sequelize.models.Client.belongsToMany(
-    sequelize.models.Share,
-    {
-        through: sequelize.models.Portfolio,
-        foreignKey: 'client_id',
-    },
-);
+    await sequelize.models.Client.belongsToMany(
+        sequelize.models.Share,
+        {
+            through: sequelize.models.Portfolio,
+            foreignKey: 'client_id',
+        },
+    );
 
-sequelize.models.Share.belongsToMany(
-    sequelize.models.Client,
-    {
-        through: sequelize.models.Portfolio,
-        foreignKey: 'symbol',
-    },
-);
+    await sequelize.models.Share.belongsToMany(
+        sequelize.models.Client,
+        {
+            through: sequelize.models.Portfolio,
+            foreignKey: 'symbol',
+        },
+    );
+};
+
+associate();
 
 module.exports = sequelize;

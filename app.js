@@ -6,6 +6,7 @@ require('./seed')(
     sequelize.models.Share,
     sequelize.models.Portfolio,
 );
+
 const transactionRoutes = require('./src/routes/trade');
 const registerRoutes = require('./src/routes/register');
 
