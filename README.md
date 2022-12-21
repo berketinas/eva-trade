@@ -8,13 +8,13 @@ Database with name specified in the .env file should be initialized via psql bef
 
 6 different clients and 7 different shares are created from the seed file.
 
-> test client 1 - 100 EVA shares
-> test client 2 - 50 XTR shares
-> test client 3 - 20 GAW shares
-> test client 4 - 30 YSL shares
-> test client 5 - 70 KDN shares
-> test client 6 - 200 OVO shares
-> LTR shares are not owned by anyone.
+- test client 1 - 100 EVA shares
+- test client 2 - 50 XTR shares
+- test client 3 - 20 GAW shares
+- test client 4 - 30 YSL shares
+- test client 5 - 70 KDN shares
+- test client 6 - 200 OVO shares
+- LTR shares are not owned by anyone.
 
 Share symbols and amount are passed to the query as parameters, and the ID of the client is set as the "id" header in the POST request.
 
